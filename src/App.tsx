@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { TrustBar } from './components/TrustBar';
 import { ServicesSection } from './components/ServicesSection';
 import { HowWeWorkSection } from './components/HowWeWorkSection';
 import { UseCasesSection } from './components/UseCasesSection';
@@ -35,35 +36,38 @@ export const App: React.FC = () => {
         {/* 1. Hero Section with 3D Ecosystem Visual */}
         <Hero onOpenContact={() => scrollToContact()} />
 
-        {/* 2. Core Solutions Grid */}
+        {/* 2. Trust Bar & Key Capabilities */}
+        <TrustBar />
+
+        {/* 3. Core Solutions Bento Grid */}
         <ServicesSection onSelectService={(service) => scrollToContact(service)} />
 
-        {/* 3. Methodology / How We Work */}
+        {/* 4. Methodology / How We Work */}
         <HowWeWorkSection />
 
-        {/* 4. Sector Use Cases (Kept in place) */}
+        {/* 5. Sector Use Cases (Kept in place) */}
         <UseCasesSection />
 
-        {/* 5. Interactive Diagnostic Quiz */}
+        {/* 6. Interactive Diagnostic Quiz */}
         <DiagnosticQuizSection onOpenContact={(notes) => scrollToContact(undefined, notes)} />
 
-        {/* 6. About Us & Partnership Pillars */}
+        {/* 7. About Us & Partnership Pillars */}
         <AboutUsSection />
 
-        {/* 7. FAQ Accordion */}
+        {/* 8. FAQ Accordion */}
         <FAQSection onOpenContact={() => scrollToContact()} />
 
-        {/* 8. Flagship Interactive Demos (Live laboratory right before CTA) */}
+        {/* 9. Flagship Interactive Demos (Live laboratory right before CTA) */}
         <DemosSection />
 
-        {/* 9. Final High-Impact CTA */}
+        {/* 10. Final High-Impact CTA */}
         <FinalCTASection onOpenContact={() => scrollToContact()} />
 
-        {/* 10. Interactive Contact Form */}
+        {/* 11. Interactive Contact Form */}
         <ContactSection initialService={selectedService} initialNotes={diagnosticNotes} />
       </main>
 
-      {/* 11. Footer */}
+      {/* 12. Footer */}
       <Footer />
     </div>
   );
