@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             className="flex items-center shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-nexora-blue rounded-xl py-0.5 mr-4"
           >
             <img
-              src="/logo.png"
+              src={`${import.meta.env.BASE_URL}logo.png`}
               alt="NEXORA Logo"
               className="h-11 sm:h-12 md:h-13 w-auto object-contain transition-transform duration-200 hover:scale-105"
             />

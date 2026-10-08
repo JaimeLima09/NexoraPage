@@ -78,7 +78,7 @@ export const HowWeWorkSection: React.FC = () => {
           <div className="lg:col-span-5 flex justify-center">
             <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-white group max-w-md">
               <img
-                src="/images/smart_solutions.jpg"
+                src={`${import.meta.env.BASE_URL}images/smart_solutions.jpg`}
                 alt="Flujos digitales diseñados por NEXORA"
                 className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
               />

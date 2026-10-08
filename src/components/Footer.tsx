@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center">
               <div className="bg-white rounded-2xl px-3 py-1.5 shadow-sm inline-block">
                 <img
-                  src="/logo.png"
+                  src={`${import.meta.env.BASE_URL}logo.png`}
                   alt="NEXORA Logo"
                   className="h-10 sm:h-12 w-auto object-contain"
                 />

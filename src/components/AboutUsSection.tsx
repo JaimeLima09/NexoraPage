@@ -35,7 +35,7 @@ export const AboutUsSection: React.FC = () => {
           <div className="lg:col-span-5 order-2 lg:order-1 flex justify-center">
             <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-white group max-w-md">
               <img
-                src="/images/tech_partnership.jpg"
+                src={`${import.meta.env.BASE_URL}images/tech_partnership.jpg`}
                 alt="Equipo y Alianza Tecnológica NEXORA"
                 className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
               />

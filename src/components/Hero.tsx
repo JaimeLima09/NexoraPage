@@ -78,7 +78,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           <div className="lg:col-span-5 relative flex justify-center">
             <div className="relative w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl border border-slate-200/90 bg-white group">
               <img
-                src="/images/hero_tech.jpg"
+                src={`${import.meta.env.BASE_URL}images/hero_tech.jpg`}
                 alt="Ecosistema tecnológico empresarial NEXORA"
                 className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
               />
