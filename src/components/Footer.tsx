@@ -68,10 +68,13 @@ export const Footer: React.FC = () => {
               Contacto
             </h4>
             <div className="space-y-2 text-xs text-slate-400">
-              <div className="flex items-center gap-2">
+              <a
+                href="mailto:jaimelg009@gmail.com"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
                 <Mail className="w-4 h-4 text-nexora-cyan shrink-0" />
-                <span>contacto@nexora.tech</span>
-              </div>
+                <span>jaimelg009@gmail.com</span>
+              </a>
               <p className="text-[11px] text-slate-500 pt-2 leading-relaxed">
                 Atención remota a empresas en México y Latinoamérica.
               </p>

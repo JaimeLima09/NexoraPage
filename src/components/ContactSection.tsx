@@ -118,7 +118,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService, 
                 </div>
                 <div>
                   <div className="font-bold text-slate-900">Correo Electrónico</div>
-                  <div className="text-slate-500 text-xs mt-0.5">contacto@nexora.tech</div>
+                  <a
+                    href="mailto:jaimelg009@gmail.com"
+                    className="text-nexora-blue hover:underline text-xs mt-0.5 block font-medium"
+                  >
+                    jaimelg009@gmail.com
+                  </a>
                 </div>
               </div>
 
