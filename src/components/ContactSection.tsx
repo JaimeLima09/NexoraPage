@@ -62,21 +62,52 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService, 
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      confetti({
-        particleCount: 50,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#2563eb', '#00bfa5', '#3b82f6', '#10b981'],
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/jaimelg009@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `🚀 Nueva Solicitud en NEXORA: ${formData.company ? `${formData.company} (${formData.name})` : formData.name}`,
+          _template: 'table',
+          _captcha: 'false',
+          'Nombre del Contacto': formData.name,
+          'Empresa': formData.company || 'No especificada',
+          'Correo Electrónico': formData.email,
+          'Teléfono / WhatsApp': formData.phone || 'No especificado',
+          'Servicio Solicitado': formData.service,
+          'Reto o Detalle del Proyecto': formData.message,
+        }),
       });
-    }, 900);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        confetti({
+          particleCount: 60,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#2563eb', '#00bfa5', '#3b82f6', '#10b981'],
+        });
+      } else {
+        setSubmitError('Hubo un inconveniente al enviar la solicitud. Por favor contáctanos directamente a jaimelg009@gmail.com');
+      }
+    } catch (err) {
+      console.error('Error enviando formulario:', err);
+      setSubmitError('Error de conexión al enviar el formulario. Puedes escribirnos a jaimelg009@gmail.com');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
@@ -89,6 +120,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService, 
       message: '',
     });
     setErrors({});
+    setSubmitError(null);
     setIsSubmitted(false);
   };
 
@@ -269,6 +301,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialService, 
                     />
                     {errors.message && <span className="text-[11px] text-rose-500 mt-1 block">{errors.message}</span>}
                   </div>
+
+                  {submitError && (
+                    <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
+                      {submitError}
+                    </div>
+                  )}
 
                   {/* Submit Button */}
                   <button
