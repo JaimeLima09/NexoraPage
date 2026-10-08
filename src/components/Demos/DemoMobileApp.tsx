@@ -70,7 +70,7 @@ export const DemoMobileApp: React.FC = () => {
 
         <div className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-indigo-50 text-indigo-700 border border-indigo-200/60 flex items-center gap-1.5">
           <Smartphone className="w-4 h-4 text-indigo-600" />
-          <span>iOS y Android nativo / web app</span>
+          <span>Android & Web App Progresiva</span>
         </div>
       </div>
 

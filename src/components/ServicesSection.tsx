@@ -147,7 +147,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 Apps Web & Móviles
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed mb-3">
-                Portales web para clientes y aplicaciones para vendedores o técnicos en ruta, compatibles con iOS y Android.
+                Portales web para clientes y aplicaciones para vendedores o técnicos en ruta, optimizadas para Android y web.
               </p>
               <div className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-lg inline-block border border-indigo-100">
                 📲 Operación en campo 24/7
